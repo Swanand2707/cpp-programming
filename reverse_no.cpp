@@ -2,13 +2,13 @@
 using namespace std;
 
 int main() {
-    int num, reversed_num = 0, remainder;
+    int num, rever = 0, remain;
 cout << "Enter an integer: ";
     cin >> num;
     while (num != 0) {
-        remainder = num % 10;
-        reversed_num = reversed_num * 10 + remainder;
+        remain = num % 10;
+        rever = rever * 10 + remain;
         num /= 10;
-      cout << "Reversed Number = " << reversed_num << endl;
+      cout << "Reversed Number = " << rever << endl;
       return 0;
 }
