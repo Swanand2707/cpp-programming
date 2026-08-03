@@ -7,11 +7,11 @@ cout<<"Enternumber: "<<endl;
 cin>>a;
 if (a>0)
 {
-cout<<"Number is even"<<endl;
+cout<<"Number is positive"<<endl;
 }
 else if (a<0)
 {
-cout<<"Number is odd"<<endl;
+cout<<"Number is Negative"<<endl;
 }
 else
 {
