@@ -1,26 +1,20 @@
 #include <iostream>
-
+using namespace std;
 class Fraction {
 private:
-    int num;  // Numerator
-    int den;  // Denominator (Note: 'demo' in notes usually stands for denominator)
-
+    int num;
+    int den;
 public:
-    // Function to take input from the user
     void input() {
-        std::cout << "Enter numerator: ";
-        std::cin >> num;
-        std::cout << "Enter denominator: ";
-        std::cin >> den;
-        
-        // Prevent division by zero
+        cout << "Enter numerator: ";
+        cin >> num;
+        cout << "Enter denominator: ";
+        cin >> den;
         while (den == 0) {
-            std::cout << "Denominator cannot be zero. Enter again: ";
-            std::cin >> den;
+            cout << "Denominator cannot be zero. Enter again: ";
+            cin >> den;
         }
     }
-
-    // Function to add two fractions: (a/b) + (c/d) = (a*d + c*b) / (b*d)
     Fraction add(const Fraction& other) {
         Fraction result;
         result.num = (this->num * other.den) + (other.num * this->den);
@@ -28,17 +22,14 @@ public:
         return result;
     }
 
-    // Function to subtract two fractions: (a/b) - (c/d) = (a*d - c*b) / (b*d)
     Fraction sub(const Fraction& other) {
         Fraction result;
         result.num = (this->num * other.den) - (other.num * this->den);
         result.den = this->den * other.den;
         return result;
     }
-
-    // Function to display the fraction in num/den format
     void display() const {
-        std::cout << num << "/" << den;
+        cout << num << "/" << den;
     }
 };
 
@@ -51,25 +42,23 @@ int main() {
     std::cout << "\n--- Enter Second Fraction ---\n";
     f2.input();
 
-    // Perform Addition
     resultAdd = f1.add(f2);
-    std::cout << "\nAddition Result: ";
+    cout << "\nAddition Result: ";
     f1.display();
-    std::cout << " + ";
+    cout << " + ";
     f2.display();
-    std::cout << " = ";
+    cout << " = ";
     resultAdd.display();
-    std::cout << "\n";
-
-    // Perform Subtraction
+    cout << "\n";
+    
     resultSub = f1.sub(f2);
-    std::cout << "Subtraction Result: ";
+    cout << "Subtraction Result: ";
     f1.display();
-    std::cout << " - ";
+    cout << " - ";
     f2.display();
-    std::cout << " = ";
+    cout << " = ";
     resultSub.display();
-    std::cout << "\n";
+    cout << "\n";
 
     return 0;
 }
