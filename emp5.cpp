@@ -81,3 +81,26 @@ int main()
 
     return 0;
 }
+// Default Constructor 
+//Employee ID: 0
+//Employee Name: Marry
+//Basic Salary: 0
+//HRA: 0
+//DA: 0
+//Gross Salary: 0
+
+// Parameterized Constructor 
+//Employee ID: 101
+//Employee Name: Tom
+//Basic Salary: 600000
+//HRA: 120000
+//DA: 60000
+//Gross Salary: 780000
+
+//Copy Constructor
+//Employee ID: 101
+//Employee Name: Tom
+//Basic Salary: 600000
+//HRA: 120000
+//DA: 60000
+//Gross Salary: 780000
