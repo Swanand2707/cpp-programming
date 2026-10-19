@@ -1,25 +1,40 @@
-#include <iostream>
-#include <fstream>
-#include <string>
+#include<iostream>
+#include<fstream>
 using namespace std;
 int main()
 {
-    ofstream fout("records.txt", ios::app);
-    string record;
-    cout << "Enter records (-1 to stop):" << endl;
-    while (true)
-    {
-        getline(cin, record);
-        if (record == "-1")
-            break;
-        fout << record << endl;
-    }
-    fout.close();
-    ifstream fin("records.txt");
-    cout << "\nAll Records:" << endl;
-    while (getline(fin, record))
-    {
-        cout << record << endl;
-    }
-    fin.close();
+ofstream fout;
+string line;
+{string line;
+ifstream fin("simple.txt");
+cout<<"Existing File Content:\n";
+if (fin.is_open())
+{
+while (getline(fin,line))
+{
+cout<<line<<endl;
+}
+fin.close();
+}
+else
+{
+cout<<"File not Exist";
+}
+cout<<"Enter NEW DATA!"<<endl;
+fout.open("simple.txt");
+while(fout)
+{
+getline(cin,line);
+if (line==" ")
+break;
+fout<<line<<endl;
+}
+fout.close();
+fin.open("simple.txt");
+while (getline(fin,line))
+{
+cout<<line<<endl;
+}
+fin.close();
+}
 }
